@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        
+        <script>
+            function setValue(value) {
+                document.getElementById('test').value = value;
+            }
+        function onClick() {
+            console.log('click')
+            if (!window.webkit)
+            return;
+            window.webkit.messageHandlers.jsHandler.postMessage("trigger from JS");
+        }
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <form>
+            <input id="test" name="testname" type="text" />
+            <button type="button" onclick="onClick()">SEND</button>
+        </form>
+        
+    </body>
+    
+</html>
+
